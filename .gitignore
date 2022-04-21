@@ -19,3 +19,7 @@
 faiss/python/swigfaiss_avx2.swig
 
 \.idea/
+
+build/
+
+*.check_cache

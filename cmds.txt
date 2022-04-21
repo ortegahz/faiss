@@ -1,0 +1,11 @@
+# compile
+sudo apt-get install -y libopenblas-dev
+sudo apt install swig
+pip install numpy
+
+cmake -B build . -DFAISS_ENABLE_GPU=OFF -DCMAKE_BUILD_TYPE=Release -DPython_EXECUTABLE=/home/firefly/anaconda3/envs/faiss/bin/python3.7 -DPYTHON_LIBRARY=/home/firefly/anaconda3/envs/faiss/lib/libpython3.7m.so
+
+make -C build -j4 faiss
+
+make -C build -j4 swigfaiss
+cd build/faiss/python && python setup.py install
